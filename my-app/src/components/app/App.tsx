@@ -11,6 +11,7 @@ export default class App extends Component {
     super(props);
     this._handleClick = this._handleClick.bind(this);
     this._handleChange = this._handleChange.bind(this);
+    console.log('constructor!')
   }
   
   readonly state: State = {
@@ -23,7 +24,6 @@ export default class App extends Component {
       count: +this.state.count + 1
     });
   }
-
   
   _handleChange(evt: ChangeEvent<HTMLInputElement>): void {
     this.setState({
@@ -31,7 +31,33 @@ export default class App extends Component {
     })
   }
 
+  static getDerivedStateFromProps() {
+    console.log('getDerivedStateFromProps!')
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount!');
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate? true!')
+    return true
+  }
+
+  getSnapshotBeforeUpdate() {
+    console.log('getSnapshotBeforeUpdate!')
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate!')
+  }
+
+  componentWillUnmount(){
+    console.log('componentWillUnmount!')
+  }
+
   render() {
+    console.log('render!')
     return (
       <form className="form">
         <input className="form__input" onChange={this._handleChange} value={this.state.count}/>

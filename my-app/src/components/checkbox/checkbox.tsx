@@ -13,7 +13,7 @@ export default class Checkbox extends Component<Props> {
 
     return (
       <>
-        <label htmlFor='checkbox'>Чекни</label>
+        <label htmlFor='checkbox'>Чекнуть</label>
         <input type="checkbox" disabled={Boolean(count%2)}/>
       </>
     )
