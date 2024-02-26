@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 type CheckBoxProps = {
-  count: number;
+  text: string;
 }
 
 type Props = Readonly<CheckBoxProps>;
@@ -9,12 +9,12 @@ type Props = Readonly<CheckBoxProps>;
 export default class Checkbox extends Component<Props> {
   
   render() {
-    const {count} = this.props;
+    const {text} = this.props;
 
     return (
       <>
         <label htmlFor='checkbox'>Чекнуть</label>
-        <input type="checkbox" disabled={Boolean(count%2)}/>
+        <input type="checkbox" disabled={text === 'реакт'}/>
       </>
     )
   }
